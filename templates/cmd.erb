@@ -1,0 +1,22 @@
+#!/bin/sh
+<%-
+def flag(option, value)
+  if value.is_a?(TrueClass) or value.is_a?(FalseClass)
+    return '--' + (value ? 'enable' : 'disable') + option
+  else
+    return "--#{option} #{value}"
+  end
+end
+exclude = 'title|name|module_name|caller_module_name|sssd_'
+ignore_unless_true = 'locauthorize'
+flags = scope.to_hash(false).keys.delete_if do |x|
+  x[/^(#{exclude})/]
+end
+-%>
+authconfig \
+<%- flags.sort.each do |name| -%>
+  <%- unless ignore_unless_true.include?(name) and not scope[name] -%>
+    <%= flag(name, scope[name]) %> \
+  <%- end -%>
+<%- end -%>
+--updateall
