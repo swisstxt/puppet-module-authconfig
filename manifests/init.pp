@@ -9,7 +9,7 @@ class authconfig(
   $ldap = false,
   $ldapauth = false,
   $ldapbasedn = undef,
-  $ldaploadcert = undef,
+  $ldaploadcacert = undef,
   $nis = false,
   $krb5 = false,
   $sssd_ldapbinddn = false,
