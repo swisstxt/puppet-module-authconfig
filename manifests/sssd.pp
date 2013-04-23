@@ -21,7 +21,7 @@ class authconfig::sssd {
    'ldap_default_bind_dn':
      value => $::authconfig::sssd_ldapbinddn;
    'ldap_default_auth_ok_type':
-     value  => 'password';
+     value  => 'obfuscated_password';
    'ldap_default_auth_ok':
      value => $::authconfig::sssd_ldapbindpw;
    'enumerate':
