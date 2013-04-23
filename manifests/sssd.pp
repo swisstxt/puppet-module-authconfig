@@ -24,5 +24,7 @@ class authconfig::sssd {
      value  => 'password';
    'ldap_default_auth_ok':
      value => $::authconfig::sssd_ldapbindpw;
+   'enumerate':
+     value => $::authconfig::sssd_enumerate;
   }
 }
