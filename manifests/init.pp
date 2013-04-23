@@ -3,17 +3,20 @@ class authconfig(
   $passalgo = 'sha512',
   $locauthorize = true,
   $mkhomedir = false,
-  $cachecreds = true,
+  $cachecreds = false,
   $sssd = false,
   $sssdauth = false,
   $ldap = false,
   $ldapauth = false,
   $ldapbasedn = undef,
+  $ldaptls = false,
+  $ldapserver = undef,
   $ldaploadcacert = undef,
   $nis = false,
   $krb5 = false,
   $sssd_ldapbinddn = false,
-  $sssd_ldapbindpw = false
+  $sssd_ldapbindpw = false,
+  $sssd_enumerate = false
 ) {
   include authconfig::sssd
 
