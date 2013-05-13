@@ -1,5 +1,4 @@
 class authconfig::sssd {
-  Class['::authconfig::sssd'] <- Class ['::authconfig']
   include augeas
 
   $use_sssd = $::authconfig::sssd or $::authconfig::sssd_auth

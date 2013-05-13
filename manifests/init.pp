@@ -33,5 +33,6 @@ class authconfig(
   exec{'authconfig':
     command => '/var/lib/puppet/authconfig/cmd',
     refreshonly => true,
+    require => Package['sssd'],
   }
 }
