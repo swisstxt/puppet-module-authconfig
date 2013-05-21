@@ -19,9 +19,9 @@ class authconfig::sssd {
   authconfig::sssd::param{
    'ldap_default_bind_dn':
      value => $::authconfig::sssd_ldapbinddn;
-   'ldap_default_authok_type':
+   'ldap_default_authtok_type':
      value  => 'password';
-   'ldap_default_authok':
+   'ldap_default_authtok':
      value => $::authconfig::sssd_ldapbindpw;
    'enumerate':
      value => $::authconfig::sssd_enumerate;
