@@ -1,7 +1,7 @@
 class authconfig::sssd {
   include augeas
 
-  $use_sssd = $::authconfig::sssd or $::authconfig::sssd_auth
+  $use_sssd = $::authconfig::sssd or $::authconfig::sssdauth
 
   augeas::lens{'sssd':
     lens_source => "puppet:///modules/${module_name}/sssd.aug",
