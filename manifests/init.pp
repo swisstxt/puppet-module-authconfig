@@ -28,7 +28,8 @@ class authconfig(
   } ->
   file{'/var/lib/puppet/authconfig/cmd':
     content => template('authconfig/cmd.erb'),
-    mode => '0770',
+    mode    => '0770',
+    notify  => Exec['authconfig'],
   } ~>
   exec{'authconfig':
     command => '/var/lib/puppet/authconfig/cmd',
